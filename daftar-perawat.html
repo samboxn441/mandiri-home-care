@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar-Perawat</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .perawat-section {
+        padding: 60px 0;
+        background: #f5f9f8;
+      }
+      .perawat-title {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+      .perawat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 25px;
+      }
+      .perawat-card {
+        background: white;
+        border-radius: 16px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+      }
+      .perawat-card img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .perawat-card h3 {
+        color: #0b6b59;
+        margin: 15px 0 8px;
+      }
+      .perawat-card p {
+        margin: 7px 0;
+        color: #555;
+      }
+      .perawat-card a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #0b6b59;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+      }
+      .back-home {
+        display: inline-block;
+        margin-bottom: 25px;
+        color: #0b6b59;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav container">
+        <a class="brand" href="index.html">
+          <img src="image/logo.svg" alt="Logo Mandiri Home Care" class="logo" />
+          <span>
+            <b>MANDIRI HOME CARE</b>
+            <small>MEDAN</small>
+            <em>Premium Care at Home</em>
+          </span>
+        </a>
+        <a class="phone" href="https://wa.me/6282168186754" target="_blank"
+          >◔ 0821-6818-6754</a
+        >
+      </div>
+    </header>
+
+    <section class="perawat-section">
+      <div class="container">
+        <div class="perawat-title">
+          <span>PROFESIONAL HEALTHCARE TEAM</span>
+          <h1>Daftar Anggota Perawat</h1>
+          <p>
+            Tim perawat Mandiri Home Care Medan. Mengenal tenaga perawat dan
+            pendamping pasien kami.
+          </p>
+        </div>
+
+        <div class="perawat-grid">
+          <article class="perawat-card">
+            <img src="image/nurse-placeholder.svg" alt="Foto perawat 1" />
+            <h3>Nama Perawat 1</h3>
+            <p>Keahlian: Perawatan Pasien</p>
+            <p>Status: Anggota</p>
+            <a href="pendaftaran-perawat.html">Informasi</a>
+          </article>
+
+          <article class="perawat-card">
+            <img src="image/nurse-placeholder.svg" alt="Foto perawat 2" />
+            <h3>Nama Perawat 2</h3>
+            <p>Keahlian: Perawatan Lansia</p>
+            <p>Status: Anggota</p>
+            <a href="pendaftaran-perawat.html">Informasi</a>
+          </article>
+
+          <article class="perawat-card">
+            <img src="image/nurse-placeholder.svg" alt="Foto perawat 3" />
+            <h3>Nama Perawat 3</h3>
+            <p>Keahlian: Home Nursing Care</p>
+            <p>Status: Anggota</p>
+            <a href="pendaftaran-perawat.html">Informasi</a>
+          </article>
+        </div>
+      </div>
+    </section>
+<!-- TOMBOL KEMBALI KE HOME -->
+  <div class="container back-home">
+    <a href="index.html" class="btn-back"> ← Kembali ke Home </a>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

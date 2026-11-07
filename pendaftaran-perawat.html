@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pendaftaran-Perawat</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f3f6fa;
+        color: #18304b;
+      }
+      header {
+        background: #102c49;
+        color: white;
+        padding: 25px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        color: #e5c47b;
+      }
+      .container {
+        max-width: 750px;
+        margin: 30px auto;
+        padding: 25px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 25px #0001;
+      }
+      h2 {
+        color: #173b5d;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 13px;
+        margin-top: 7px;
+        border: 1px solid #ccd5df;
+        border-radius: 7px;
+      }
+      button {
+        width: 100%;
+        margin-top: 25px;
+        padding: 15px;
+        border: 0;
+        border-radius: 8px;
+        background: #173b5d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #b38b42;
+      }
+      .note {
+        font-size: 13px;
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>MANDIRI HOME CARE</h1>
+      <p>MEDAN | Pendaftaran Mitra Perawat</p>
+    </header>
+
+    <div class="container">
+      <h2>Formulir Pendaftaran Perawat</h2>
+      <p>Silakan lengkapi data diri Anda.</p>
+
+      <form id="formPerawat">
+        <label>Nomor Pendaftaran</label>
+        <input id="nomor" readonly />
+
+        <label>Nama Lengkap</label>
+        <input id="nama" required />
+
+        <label>Nomor WhatsApp</label>
+        <input id="wa" type="tel" required />
+
+        <label>Email</label>
+        <input id="email" type="email" />
+
+        <label>Tempat dan Tanggal Lahir</label>
+        <input id="lahir" required />
+
+        <label>Jenis Kelamin</label>
+        <select id="gender" required>
+          <option value="">Pilih</option>
+          <option>Laki-laki</option>
+          <option>Perempuan</option>
+        </select>
+
+        <label>Alamat Lengkap</label>
+        <textarea id="alamat" required></textarea>
+
+        <label>Pendidikan Terakhir</label>
+        <select id="pendidikan" required>
+          <option value="">Pilih Pendidikan</option>
+          <option>D3 Keperawatan</option>
+          <option>S1 Keperawatan</option>
+          <option>Profesi Ners</option>
+          <option>Lainnya</option>
+        </select>
+
+        <label>Nomor STR</label>
+        <input id="str" placeholder="Nomor STR" />
+
+        <label>Pengalaman Kerja</label>
+        <textarea id="pengalaman"></textarea>
+
+        <label>Keahlian</label>
+        <select id="keahlian" required>
+          <option value="">Pilih Keahlian</option>
+          <option>Perawatan Lansia</option>
+          <option>Perawatan Pasien</option>
+          <option>Home Care</option>
+          <option>Perawatan Luka</option>
+          <option>Lainnya</option>
+        </select>
+
+        <label>
+          <input type="checkbox" id="setuju" required style="width: auto" />
+          Saya menyetujui penggunaan data untuk proses seleksi.
+        </label>
+
+        <p class="note">Pastikan seluruh informasi yang diberikan benar.</p>
+
+        <button type="submit">Kirim Pendaftaran</button>
+      </form>
+    </div>
+
+    <script>
+      const nomor =
+        "MHC-PRW-" +
+        new Date().getFullYear() +
+        "-" +
+        Math.random().toString(36).substring(2, 8).toUpperCase();
+
+      document.getElementById("nomor").value = nomor;
+
+      document
+        .getElementById("formPerawat")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (!this.reportValidity()) return;
+
+          const data = `
+PENDAFTARAN PERAWAT
+MANDIRI HOME CARE MEDAN
+
+Nomor: ${nomor}
+Nama: ${document.getElementById("nama").value}
+WhatsApp: ${document.getElementById("wa").value}
+Email: ${document.getElementById("email").value}
+Lahir: ${document.getElementById("lahir").value}
+Jenis Kelamin: ${document.getElementById("gender").value}
+Alamat: ${document.getElementById("alamat").value}
+Pendidikan: ${document.getElementById("pendidikan").value}
+STR: ${document.getElementById("str").value}
+Pengalaman: ${document.getElementById("pengalaman").value}
+Keahlian: ${document.getElementById("keahlian").value}
+`;
+
+          const pesan = encodeURIComponent(data);
+          window.open("https://wa.me/6282168186754?text=" + pesan, "_blank");
+        });
+    </script>
+<!-- TOMBOL KEMBALI KE HOME -->
+  <div class="container back-home">
+    <a href="index.html" class="btn-back"> ← Kembali ke Home </a>
+  </div>
+
+  <div class="container" style="text-align:center"><a href="index.html">← Kembali ke Home</a></div>
+
+</body>
+</html>
